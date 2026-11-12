@@ -1,0 +1,13 @@
+# Portable dependencies for app.py; use Python 3.11.
+# The original requirements_tjtoothai_env.txt is an archived server snapshot.
+Flask==3.0.3
+Werkzeug==3.0.3
+inference-sdk==0.37.1
+supervision==0.25.1
+opencv-python==4.10.0.84
+numpy==1.26.4
+Pillow==10.4.0
+matplotlib==3.7.5
+requests==2.32.4
+python-dotenv==1.0.1
+gunicorn==22.0.0

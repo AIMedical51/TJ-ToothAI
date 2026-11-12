@@ -1,0 +1,71 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*~
+*.swp
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Local credentials: never store real credentials in tracked source files.
+/.private/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+/www/tjtooth/ssl/
+/www/tjtooth/ssl_old/
+
+# Backups can contain old credentials or patient data.
+*.bak
+*.bak.*
+*.log
+logs/
+nohup.out
+
+# Runtime uploads, generated images, and patient records
+/var/
+temp/
+uploads/
+outputs/
+reports/
+patient_data/
+patient_reports/
+/www/tjtooth/static/uploads/
+/www/tjtooth/static/outputs/
+/www/tjtooth/annotated_images/
+/www/tjtooth/test.png
+/www/tjtooth/temp_image.jpg
+agent_report_*.json
+oral_health_report_*.html
+oral_health_report_*.pdf
+*.sqlite
+*.sqlite3
+
+# Model weights are distributed separately.
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# Keep website images, CSS, JavaScript, and QR background artwork tracked.

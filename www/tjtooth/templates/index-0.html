@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>TJ-ToothAI</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            padding-top: 25px;
+            height: 0;
+            margin-top: 150px;
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="static/images/fevicon.png">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="static/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+<!-- body -->
+
+<body>
+    <!-- header top section start -->
+    <div class="header_top">
+        <div class="container">
+            <div class="row border_bottom_0">
+                <div class="col-md-4">
+                    <div class="logo">
+                        <a href="{{ url_for('index') }}"><img src="static/images/logo.png"></a>
+                        <!-- <img src="static/images/tjtooth.png"> -->
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="mail_menu">
+                        <ul>
+                            <li><img src="static/images/call-icon.png"></li>
+                            <li>联系电话 : 15537582076</li>
+                            <li><img src="static/images/mail-icon.png"></li>
+                            <li>邮箱 : 2332053@xx.edu.cn</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header section start -->
+        <div class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('index') }}">主页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('about') }}">关于我</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('feature') }}">团队介绍</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('services') }}">口腔检测</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- header top section end -->
+        <!-- banner section start -->
+        <div class="banner_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="banner_taital">TJ-ToothAI</h1>
+                        <h1 class="routine_taital">您的专业口腔医生助手</h1>
+                        <p class="lorem_text">●多方面分析您的口腔信息，包括龋齿、牙石、齿色、牙周炎、缺牙等；<br>●根据分析结果评估您的口腔健康状况，提供可视化健康评分报告；<br>●为您提供个性化的口腔保健建议，<a href="https://chatglm.cn/main/gdetail/66587a6c1b629ba97667f11f">口腔医生助手大模型</a>可供使用。</p>
+                        <p class="lorem_text">更多样例已开发完毕，正在不断整合进本网站。</p>
+                        <div class="contact_bt"><a href="{{ url_for('caries') }}">开始检测</a></div>
+                        <!-- <div class="contact_bt"><a href="{{ url_for('video') }}">演示视频</a></div> -->
+                    </div>
+                        <div class="col-md-6">
+                            <h2 class="my_routine_taital">演示与采访</h2>
+                            <!-- <div class="image_1"><img src="static/images/index.gif" alt="Animated GIF"></div> -->
+                            <div class="video-container">
+                                <video controls>
+                                    <source src="static/video/v_s.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                    </div>
+                    <!-- <div class="col-md-6">
+                    <h2 class="my_routine_taital">演示与采访</h2>
+                         <div class="image_1"><img src="static/images/index.gif" alt="Animated GIF"></div>
+                        <video width="640" height="360" controls>
+                        <source src="static/video/v.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>                     -->
+                </div>
+            </div>
+        </div>
+        <!-- banner section end -->
+        <!-- header section end -->
+    </div>
+    <!-- about section start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="image_2"><img src="static/images/img-2.png"></div>
+                </div>
+                <div class="col-md-6">
+                    <h1 class="makes_text">我是谁</h1>
+                    <p class="ipsum_text">我是**大学MedAI实验室的学生，实验室领头人陈宇飞作为计算机科学与技术学院副教授及博士生导师，在机器学习、深度学习和医学影像分析等领域具有丰富的研究经验，同时与医院长期合作进行项目开发，在计算机辅助医学诊断领域具备扎实的理论研究与项目开发经验。</p>
+                    <div class="read_bt"><a href="{{ url_for('about') }}">阅读更多</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about section end -->
+    <!-- services section start -->
+    <div class="services_section layout_padding">
+        <div class="container">
+            <p class="smile_text">让你的口腔更健康</p>
+            <h1 class="services_text">口腔疾病检测</h1>
+            <div class="services_section_2">
+                <div class="row">
+                    <div class="col-sm-12 col-lg-9">
+                        <div class="icons_main">
+                            <div class="left_main">
+                                <div class="icon_1"><img src="static/images/icon-1.png"></div>
+                                <h2 class="dental_text">龋齿检测</h2>
+                            </div>
+                            <div class="middle_main">
+                                <div class="icon_1"><img src="static/images/icon-2.png"></div>
+                                <h2 class="dental_text">牙结石检测</h2>
+                            </div>
+                            <div class="right_main">
+                                <div class="icon_1"><img src="static/images/icon-3.png"></div>
+                                <h2 class="dental_text">齿色检测</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-9">
+                        <div class="icons_main">
+                            <div class="left_main">
+                                <div class="icon_1"><img src="static/images/icon-4.png"></div>
+                                <h2 class="dental_text">牙周炎检测</h2>
+                            </div>
+                            <div class="middle_main">
+                                <div class="icon_1"><img src="static/images/icon-5.png"></div>
+                                <h2 class="dental_text">缺牙检测</h2>
+                            </div>
+                            <div class="right_main">
+                                <div class="icon_1"><img src="static/images/icon-6.png"></div>
+                                <h2 class="dental_text">补牙检测</h2>
+                            </div>
+                        </div>
+                        <div class="read_bt_1"><a href="{{ url_for('services') }}">阅读更多</a></div>
+                    </div>
+                    <div class="col-sm-12 col-lg-3">
+                        <div class="image_3"><img src="static/images/img-3.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- services section end -->
+    <!-- team section start -->
+    <div class="team_section layout_padding">
+        <div class="container">
+            <p class="who_text">专业的医学与人工智能研究团队</p>
+            <h1 class="highly_text">团队人员构成</h1>
+            <div class="team_section_2">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-6">
+                        <div class="image_5"><img src="static/images/YFC.jpg"></div>
+                        <h2 class="johanson_text">陈宇飞</h2>
+                        <h3 class="orthodontist_text">**大学电子与信息工程学院副教授</h3>
+                        <h3 class="orthodontist_text">医学影像领域主流国际会议MICCAI-CLIP主席</h3>
+                        <h3 class="orthodontist_text">图像计算与数字医学国际研讨会ISICDM挑战赛-CLIP主席</h3>
+                        <h3 class="orthodontist_text">医学图像计算青年研讨会MICS委员</h3>
+                        <h3 class="orthodontist_text">全国仿生学标准委员会委员</h3>
+                        <h3 class="orthodontist_text">主持各类课题14项，其中国家自然科学基金3项，国家重点研发课题1项，子课题1项，上海市科技创新行动计划课题2项，中央高校基本科研业务项目4项。</h3>
+                        <h3 class="orthodontist_text">发表论文共100+篇，近五年发表JCR一区期刊13篇、二区期刊7篇、ESI高被引论文1篇，中国计算机学会CCF-A类会议3篇、CCF-B类会议7篇。</h3>
+                        <h3 class="orthodontist_text">授权专利14项</h3>
+                    </div>
+                    <div class="col-sm-6 col-lg-6">
+                        <div class="image_5"><img src="static/images/QZ.jpg"></div>
+                        <h2 class="johanson_text">张旗</h2>
+                        <h3 class="orthodontist_text">**大学口腔医学院·附属口腔医院副院长</h3>
+                        <h3 class="orthodontist_text">中华口腔医学会牙体牙髓病学专业委员会常委</h3>
+                        <h3 class="orthodontist_text">中华口腔医学会口腔生物医学专业委员会常委</h3>
+                        <h3 class="orthodontist_text">国家卫健委“十三五”规划教材《牙体牙髓病学》编委</h3>
+                        <h3 class="orthodontist_text">上海市口腔医学会副秘书长</h3>
+                        <h3 class="orthodontist_text">上海市口腔医学会牙体牙髓病学专业委员会副主任委员</h3>
+                        <h3 class="orthodontist_text">主持各类课题27项，其中国家自然科学基金6项</h3>
+                        <h3 class="orthodontist_text">发表论文共91篇，第一或通讯作者发表SCI论文43篇，代表性论文包括国际口腔医学权威杂志 J Dent Res 2篇，牙髓病学领域权威杂志 J Endod 6 篇， Int Endod J 2 篇，《中华口腔医学杂志》3 篇</h3>
+                        <h3 class="orthodontist_text">授权专利3项</h3>
+                    </div>
+                    <div class="col-sm-6 col-lg-12">
+                        <p class="lorem_ipsum_text">两个团队自 2017 年起便开始合作，针对人工智能在牙体牙髓诊疗领域的应用展开了一系列研究。合作团队共同申请并主持**大学重点领域学科交叉重大项目“沉浸式牙体牙髓病诊疗临床模拟训练系统的研发”，60 万。项目编号：22120190217（2019-2021）。申请专利 2 项，发表SCI论文 1 篇。</p>
+                        <div class="read_bt_main">
+                            <div class="read_bt_2"><a href="{{ url_for('feature') }}">阅读更多</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- team section end -->
+    <!-- choose section start -->
+    <!-- <div class="choose_section layout_padding">
+        <div class="container">
+            <h1 class="choose_text">本项目相关成果</h1>
+            <p class="available_text">发表学术论文10篇（英文6篇，中文4篇）；申请发明专利6项，其中授权2项；承担项目**大学重点领域学科交叉重大项目（22120190217）、上海市卫生健康委员会卫生行业临床研究专项（202040282）与上海申康医院发展中心临床三年行动计划（SHDC2020CR3058B）</p>
+            <p class="available_text">代表性论文：</p>
+                <p>1. Duan W, Chen Y, Zhang Q, Lin X, Yang X. Refined tooth and pulp segmentation using U-Net in CBCT image[J]. Dentomaxillofac Radiol. 2021;50(6):20200251. </p>
+                <p>2. Lin X, Fu Y, Ren G, Yang X, Duan W, Chen Y, Zhang Q. Micro-Computed Tomography-Guided Artificial Intelligence for Pulp Cavity and Tooth Segmentation on Cone-beam Computed Tomography[J]. J Endod. 2021;47(12):1933-1941. </p>
+                <p>3. Yang X, Chen Y, Yue X , Lin X, Zhang Q. Variational Synthesis Network for Generating Micro Computed Tomography from Cone Beam Computed Tomography[C]// 2021 IEEE International Conference on Bioinformatics and Biomedicine (BIBM), Houston, TX, USA: IEEE, 2021: 1611-1614.</p>
+                <p>4. Ren G ,  Chen Y ,  Qi S , Fu Y, Zhang Q. Feature Patch Based Attention Model for Dental Caries Classification[C]// Workshop on Clinical Image-Based Procedures. Springer, Cham, 2023:62-71</p>
+                <p>5. Gayeon Kim, Yufei Chen, Shuai Qi, Yujie Fu, Qi Zhang. Uncertainty Based Border-Aware Segmentation Network for Deep Caries, MICCAI Workshop on Clinical Image-based Procedures: Towards Holistic Patient Models for Personalised Healthcare (MICCAI-CLIP), 2023(14242): 70-80.</p>
+                <p>6. Yufei Chen, Xiaoyu Yang, Xiaodong Yue, Xiang Lin, Xiang Lin, Qi Zhang, Hamido Fujita, A General Variation-driven Network for Medical Image Synthesis, Applied Intelligence, 2024. (已接收）</p>
+                <p>7. 林翔,傅裕杰,任根强,温佳欢,陈宇飞,张旗. U-Net神经网络分割锥形束CT影像中下颌磨牙牙体与牙髓腔及其准确性验证[J].上海口腔医学,2022,31(05):454-459.</p>
+                <p>8. 温佳欢,傅裕杰,任根强,陈宇飞,张旗. 基于深度学习的点云补全网络修复上颌磨牙钙化根管的研究[J].口腔医学研究,2023,39(05):455-459.</p>
+                <p>9. 张茗茗,傅裕杰,张旗.基于CBCT的牙髓源性上颌窦炎口腔治疗预后研究[J].临床口腔医学杂志,2023,39(06):341-343.</p>
+                <p>10. 齐帅,张旗.卷积神经网络在牙体牙髓病影像诊断中的研究和应用[J].口腔医学研究,2023,39(11):960-964.</p>
+            <p class="available_text">代表性专利：</p>
+                <p>1.一种基于全景图的单牙提取方法（杨小宇，段巍，陈宇飞，张旗，林翔）专利申请号：201910664757.3 （已授权）</p>
+                <p>2.基于灰度直方图的单牙及其牙髓分割方法 （段巍，杨小宇，陈宇飞，张旗，林翔）专利号：201910687719.X（已授权）</p>
+                <p>3. 一种基于模态转换的CBCT生成Micro-CT方法(杨小宇，陈宇飞，孙士晨，任根强，林翔，张旗)专利申请号：202111580972.9</p>
+                <p>4. 一种定量控力的口腔科挖匙（张旗，齐帅，傅裕杰，林翔，陈宇飞）专利申请号：202210807612.6</p>
+                <p>5. 制作显微CT中指定影像断层的牙齿磨片的方法（张旗，齐帅，傅裕杰，陈宇飞，任根强）专利申请号：202210808155.2</p>
+                <p>6.  一种用于后牙的冠内导板装置（张旗，温佳欢，傅裕杰，林翔，陈宇飞）专利申请号：202310001545.3</p>
+        </div>
+    </div> -->
+    <!-- choose section end -->
+    <!-- footer section start -->
+    <div class="footer_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-8">
+                    <h1 class="about_text">关于我</h1>
+                    <p class="lorem_footer_text">我所在的**大学：2025QS世界大学排名192,内地第8</p>
+                    <p class="lorem_footer_text">我所在的**大学MedAI实验室：实验室研究方向侧重于计算机智能与临床医疗辅助诊断的交叉，主要目标是开发一个基于多源复杂医疗数据的决策支持系统。该系统已成功应用于长海医院、瑞金医院、仁济医院放射科、宁波市第一人民医院、**口腔医院等多家医疗机构，效果和应用效果均优异。
+                    </p>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <h1 class="about_text">联系我</h1>
+                    <p class="lorem_footer_text">联系电话：+86 15537582076</p>
+                    <p class="lorem_footer_text">邮箱：2332053@xx.edu.cn</p>
+                    
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-8">
+                    <a href="https://beian.miit.gov.cn/" target="_blank">备案号</a>
+                <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2024104359号</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section end -->
+    <!-- Javascript files-->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/jquery-3.0.0.min.js"></script>
+    <script src="static/js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="static/js/custom.js"></script>
+    <!-- javascript -->
+    <script src="static/js/owl.carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+</body>
+
+</html>

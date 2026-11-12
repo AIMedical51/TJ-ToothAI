@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>科普视频 - TJ-ToothAI</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="static/images/fevicon.png">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="static/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    
+    <style>
+        .page-header {
+            background-image: url('../static/images/banner-bg.png');
+            background-size: 100%;
+            color: #fefeff;
+            padding: 200px 0 100px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 60px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fefeff;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            color: #fefeff;
+            opacity: 0.9;
+        }
+
+        .video-content {
+            display: flex;
+            min-height: 600px;
+            background: #fefeff;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: #f8f9fa;
+            border-right: 2px solid #e9ecef;
+            padding: 30px 0;
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-item {
+            margin-bottom: 5px;
+        }
+
+        .category-btn {
+            width: 100%;
+            display: block;
+            padding: 15px 25px;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            color: #2c2d2d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .category-btn:hover {
+            background: #e9ecef;
+            color: #1b161d;
+        }
+
+        .category-btn.active {
+            background: #1b161d;
+            color: #fefeff;
+            border-left-color: #fefeff;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 50px;
+        }
+
+        .content-header {
+            margin-bottom: 40px;
+        }
+
+        .content-title {
+            font-size: 35px;
+            color: #2c2d2d;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .content-description {
+            font-size: 16px;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(27, 22, 29, 0.2);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1b161d;
+            margin-bottom: 10px;
+        }
+
+        .video-description {
+            color: #666666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: #666666;
+        }
+
+        .empty-icon {
+            font-size: 64px;
+            color: #e9ecef;
+            margin-bottom: 20px;
+        }
+
+        .empty-text {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .empty-subtext {
+            font-size: 14px;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .video-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #e9ecef;
+                padding: 20px 0;
+            }
+
+            .category-list {
+                display: flex;
+                overflow-x: auto;
+                padding: 0 20px;
+            }
+
+            .category-item {
+                margin-right: 10px;
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+
+            .category-btn {
+                white-space: nowrap;
+                padding: 10px 20px;
+                border-radius: 25px;
+                border-left: none;
+            }
+
+            .category-btn.active {
+                background: #1b161d;
+                color: #fefeff;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .page-header {
+                padding: 120px 0 70px;
+            }
+            
+            .page-header h1 {
+                font-size: 35px;
+            }
+
+            .content-title {
+                font-size: 28px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header top section start -->
+    <div class="header_top">
+        <div class="container">
+            <div class="row border_bottom_0">
+                <div class="col-md-4">
+                    <div class="logo">
+                        <a href="{{ url_for('index') }}"><img src="static/images/logo.png"></a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="mail_menu">
+                        <ul>
+                            <li><img src="static/images/call-icon.png"></li>
+                            <li>联系电话 : 15537582076</li>
+                            <li><img src="static/images/mail-icon.png"></li>
+                            <li>邮箱 : 2332053@xx.edu.cn</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header section start -->
+        <div class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('index') }}">主页</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('about') }}">关于我</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('feature') }}">合作伙伴</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('services') }}">口腔检测</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ url_for('science_videos') }}">科普视频</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>口腔健康科普视频</h1>
+            <p>学习专业的口腔保健知识，提升口腔健康意识</p>
+        </div>
+    </div>
+    
+    <!-- Video Content Section -->
+    <div class="video-content">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul class="category-list">
+                <li class="category-item">
+                    <button class="category-btn active" data-category="caries">龋齿</button>
+                </li>
+                <li class="category-item">
+                    <button class="category-btn" data-category="periodontitis">牙周炎</button>
+                </li>
+                <li class="category-item">
+                    <button class="category-btn" data-category="calculus">牙结石</button>
+                </li>
+                <li class="category-item">
+                    <button class="category-btn" data-category="wisdom_teeth">智齿</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-header">
+                <h2 class="content-title" id="contentTitle">龋齿科普</h2>
+                <p class="content-description" id="contentDescription">
+                    了解龋齿的成因、预防和治疗方法，保护牙齿健康。
+                </p>
+            </div>
+
+            <div class="video-grid" id="videoGrid">
+                <!-- 视频内容将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer section start -->
+    <div class="footer_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-8">
+                    <h1 class="about_text">关于我</h1>
+                    <p class="lorem_footer_text">我的实验室研究方向侧重于计算机智能与临床医疗辅助诊断的交叉，主要目标是开发一个基于多源复杂医疗数据的决策支持系统。该系统已成功应用于长海医院、瑞金医院、仁济医院放射科、宁波市第一人民医院、**口腔医院等多家医疗机构，效果和应用效果均优异。
+                    </p>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <h1 class="about_text">联系我</h1>
+                    <p class="lorem_footer_text">联系电话：+86 15537582076</p>
+                    <p class="lorem_footer_text">邮箱：2332053@xx.edu.cn</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-8">
+                    <a href="https://beian.miit.gov.cn/" target="_blank">备案号</a>
+                    <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备2024104359号</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section end -->
+    
+    <!-- Javascript files-->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/jquery-3.0.0.min.js"></script>
+    <script src="static/js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="static/js/custom.js"></script>
+    <!-- javascript -->
+    <script src="static/js/owl.carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    
+    <script>
+        // 视频数据配置
+        const videoCategories = {
+            caries: {
+                title: "龋齿科普",
+                description: "了解龋齿的成因、预防和治疗方法，保护牙齿健康。",
+                videos: [
+                    {
+                        title: "巴氏刷牙法",
+                        description: "学习科学有效的巴氏刷牙方法，正确清洁牙齿表面和牙龈边缘。",
+                        src: "static/video/caries/Bass_brushing.mp4"
+                    },
+                    {
+                        title: "牙齿窝沟封闭",
+                        description: "了解牙齿窝沟封闭技术，有效预防儿童和青少年龋齿。",
+                        src: "static/video/caries/Dental_sealant.mp4"
+                    },
+                    {
+                        title: "龋齿救治方法",
+                        description: "学习龋齿的不同阶段治疗方法，及时保护牙齿健康。",
+                        src: "static/video/caries/Rescuing_cavities.mp4"
+                    },
+                    {
+                        title: "口腔清洁工具使用",
+                        description: "正确使用各种口腔清洁工具，提高清洁效果。",
+                        src: "static/video/caries/cleaning_tools.mp4"
+                    }
+                ]
+            },
+            periodontitis: {
+                title: "牙周炎科普",
+                description: "认识牙周炎的症状、治疗和预防措施，维护牙龈健康。",
+                videos: [
+                    {
+                        title: "牙周炎详解",
+                        description: "全面了解牙周炎的成因、症状、治疗和预防方法。",
+                        src: "static/video/periodontitis/Periodontitis.mp4"
+                    }
+                ]
+            },
+            calculus: {
+                title: "牙结石科普",
+                description: "认识牙结石的危害及其清除和预防方法，保持口腔清洁。",
+                videos: [
+                    {
+                        title: "牙结石形成与清除",
+                        description: "了解牙结石的形成过程和专业清除方法，预防口腔疾病。",
+                        src: "static/video/calculus/calculus.mp4"
+                    }
+                ]
+            },
+            wisdom_teeth: {
+                title: "智齿科普",
+                description: "了解智齿的生长过程和处理方式，做出正确的治疗选择。",
+                videos: [
+                    {
+                        title: "智齿处理指南",
+                        description: "全面了解智齿的生长、影响和处理方式，帮助您做出明智决定。",
+                        src: "static/video/wisdom_teeth/Wisdom_teeth.mp4"
+                    }
+                ]
+            }
+        };
+
+        // 当前选中的分类
+        let currentCategory = 'caries';
+
+        // 渲染视频列表
+        function renderVideos(category) {
+            const videoGrid = document.getElementById('videoGrid');
+            const categoryData = videoCategories[category];
+            
+            if (!categoryData || categoryData.videos.length === 0) {
+                // 显示空状态
+                videoGrid.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">
+                            <i class="fa fa-video-camera"></i>
+                        </div>
+                        <div class="empty-text">暂无${categoryData ? categoryData.title : ''}视频</div>
+                        <div class="empty-subtext">该分类下的科普视频正在制作中，敬请期待</div>
+                    </div>
+                `;
+                return;
+            }
+
+            // 渲染视频卡片
+            videoGrid.innerHTML = categoryData.videos.map(video => `
+                <div class="video-card">
+                    <video controls>
+                        <source src="${video.src}" type="video/mp4">
+                        您的浏览器不支持视频播放。
+                    </video>
+                    <div class="video-info">
+                        <div class="video-title">${video.title}</div>
+                        <div class="video-description">${video.description}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 更新内容标题和描述
+        function updateContent(category) {
+            const categoryData = videoCategories[category];
+            if (categoryData) {
+                document.getElementById('contentTitle').textContent = categoryData.title;
+                document.getElementById('contentDescription').textContent = categoryData.description;
+            }
+        }
+
+        // 切换分类
+        function switchCategory(category) {
+            if (currentCategory === category) return;
+
+            // 更新按钮状态
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+
+            // 更新内容
+            currentCategory = category;
+            updateContent(category);
+            renderVideos(category);
+        }
+
+        // 页面初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 绑定分类按钮点击事件
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    switchCategory(category);
+                });
+            });
+
+            // 初始化显示第一个分类
+            renderVideos(currentCategory);
+        });
+    </script>
+</body>
+
+</html>
