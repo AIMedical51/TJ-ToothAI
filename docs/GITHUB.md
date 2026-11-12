@@ -1,13 +1,13 @@
 # 发布到 GitHub
 
-本文说明 [AIMedical51/TJ-ToothA](https://github.com/AIMedical51/TJ-ToothA) 的源码检查、首次发布与后续维护流程。GitHub 仓库名为 `TJ-ToothA`，项目品牌名称保留为 **TJ-ToothAI**。
+本文说明 [AIMedical51/TJ-ToothAI](https://github.com/AIMedical51/TJ-ToothAI) 的源码检查、首次发布与后续维护流程。
 
-获取已有仓库的源码请使用 `git clone https://github.com/AIMedical51/TJ-ToothA.git`。首次初始化与首次推送步骤仅适用于尚未接入该远程仓库的本地源码。
+获取已有仓库的源码请使用 `git clone https://github.com/AIMedical51/TJ-ToothAI.git`。首次初始化与首次推送步骤仅适用于尚未接入该远程仓库的本地源码。
 
-以下步骤以 `TJ-ToothA/` 为仓库根目录，当前主程序位于 `www/tjtooth/`，二维码服务仍位于根目录下的 `qrcode-server/`：
+以下步骤以 `TJ-ToothAI/` 为仓库根目录，当前主程序位于 `www/tjtooth/`，二维码服务仍位于根目录下的 `qrcode-server/`：
 
 ```text
-TJ-ToothA/
+TJ-ToothAI/
 ├── README.md
 ├── .gitignore
 ├── docs/
@@ -81,7 +81,7 @@ Coze 的浏览器鉴权需要单独处理：把长期 token 放入环境变量�
 
 ## 3. 创建空的远程仓库
 
-目标仓库为 `AIMedical51/TJ-ToothA`。如果目标仓库尚不存在，以 `AIMedical51` 账号创建名称为 `TJ-ToothA` 的仓库；如果已经存在，直接检查远程状态并使用已有仓库。公开和私有仓库都不应保存真实密钥及患者数据。
+目标仓库为 `AIMedical51/TJ-ToothAI`。如果目标仓库尚不存在，以 `AIMedical51` 账号创建名称为 `TJ-ToothAI` 的仓库；如果已经存在，直接检查远程状态并使用已有仓库。公开和私有仓库都不应保存真实密钥及患者数据。
 
 首次从本地发布时，请创建**空仓库**，不要让 GitHub 自动生成 README、`.gitignore` 或 LICENSE，因为本地已有文档。若远程已经有提交，应先拉取并整合已有内容，不要使用强制推送覆盖。
 
@@ -103,10 +103,10 @@ ssh -T git@github.com
 
 ## 5. 初始化本地仓库并审查暂存内容
 
-以下命令以**凭据已经清理、敏感数据已经排除、资源授权已经确认**为前提。先进入项目根目录，也就是同时包含 `www/`、`qrcode-server/` 和 `docs/` 的 `TJ-ToothA/`；不要在 `www/tjtooth/` 内另建一个仓库。
+以下命令以**凭据已经清理、敏感数据已经排除、资源授权已经确认**为前提。先进入项目根目录，也就是同时包含 `www/`、`qrcode-server/` 和 `docs/` 的 `TJ-ToothAI/`；不要在 `www/tjtooth/` 内另建一个仓库。
 
 ```bash
-cd /path/to/TJ-ToothA
+cd /path/to/TJ-ToothAI
 git init
 git branch -M main
 git config --local user.name "AIMedical51"
@@ -163,11 +163,11 @@ git rm --cached -- path/to/unwanted-file
 
 ## 6. 提交和首次推送
 
-仅在审查通过、SSH 鉴权可用且目标远程空仓库准备好后执行。以下命令使用指定仓库 `AIMedical51/TJ-ToothA`：
+仅在审查通过、SSH 鉴权可用且目标远程空仓库准备好后执行。以下命令使用指定仓库 `AIMedical51/TJ-ToothAI`：
 
 ```bash
 git commit -m "docs: prepare TJ-ToothAI source and documentation"
-git remote add origin git@github.com:AIMedical51/TJ-ToothA.git
+git remote add origin git@github.com:AIMedical51/TJ-ToothAI.git
 git remote -v
 git push -u origin main
 ```

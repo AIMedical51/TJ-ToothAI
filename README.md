@@ -6,7 +6,7 @@ TJ-ToothAI 将口腔图片采集、远程智能检测、可视化标注、综合
 
 项目延续原网页“专业口腔医生助手，仅作学习展示”的定位，探索人工智能与口腔医学结合的应用流程。页面展示龋齿、牙结石、齿色、牙周炎、缺牙、补牙等分析方向；实际可识别类别及效果取决于所调用的模型与服务。本仓库不对原网页中的研究成果、机构应用或诊断准确率作额外保证。
 
-仓库：[AIMedical51/TJ-ToothA](https://github.com/AIMedical51/TJ-ToothA) · 维护者：[AIMedical51](https://github.com/AIMedical51)
+仓库：[AIMedical51/TJ-ToothAI](https://github.com/AIMedical51/TJ-ToothAI) · 维护者：[AIMedical51](https://github.com/AIMedical51)
 
 > 本项目用于学习、研究与功能演示，输出不替代专业口腔检查和诊断。当前没有用户登录和报告访问控制，请先使用脱敏测试数据在本机验证。
 
@@ -76,7 +76,7 @@ TJ-ToothAI 将口腔图片采集、远程智能检测、可视化标注、综合
 ## 项目结构
 
 ```text
-TJ-ToothA/
+TJ-ToothAI/
 ├── README.md
 ├── .env.example                 # 主应用配置示例，不含真实密钥
 ├── .gitignore
@@ -116,8 +116,8 @@ TJ-ToothA/
 ### 1. 获取源码并创建主应用环境
 
 ```bash
-git clone https://github.com/AIMedical51/TJ-ToothA.git
-cd TJ-ToothA
+git clone https://github.com/AIMedical51/TJ-ToothAI.git
+cd TJ-ToothAI
 python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -257,7 +257,7 @@ python -m unittest discover -s tests -v
 
 ## 贡献与许可证
 
-欢迎通过 [GitHub 仓库](https://github.com/AIMedical51/TJ-ToothA) 提交 Issue 或 Pull Request，说明复现步骤、运行环境和预期行为；示例应使用脱敏数据，不要附带真实密钥或患者报告。
+欢迎通过 [GitHub 仓库](https://github.com/AIMedical51/TJ-ToothAI) 提交 Issue 或 Pull Request，说明复现步骤、运行环境和预期行为；示例应使用脱敏数据，不要附带真实密钥或患者报告。
 
 建议优先改进接口校验、访问控制、错误反馈、依赖验证及素材完整性。修改前请区分当前网页主流程和历史实验脚本，避免把未验证的实验能力写成已完成的产品功能。
 
